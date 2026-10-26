@@ -76,8 +76,42 @@ img {
   justify-content: space-between;
 }
 
+.topline-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .topline a {
   color: #e7e8e3;
+}
+
+.topline .topline-youtube {
+  display: inline-flex;
+  min-height: 27px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: #f4f5f1;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.topline-youtube span {
+  color: #ff5353;
+  font-size: 9px;
+}
+
+.topline-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topline-address span {
+  margin-left: 4px;
+  color: var(--green);
 }
 
 .topline strong {
@@ -170,8 +204,8 @@ img {
 }
 
 .hero-image {
-  background-image: url("../images/dasanch/hero-1.jpg");
-  background-position: center 43%;
+  background-image: url("../images/dasanch/hero-cross.jpg");
+  background-position: center 47%;
   background-size: cover;
   transform: scale(1.01);
 }
@@ -388,6 +422,46 @@ img {
   gap: 16px;
 }
 
+.video-player {
+  display: flex;
+  width: min(100%, 900px);
+  aspect-ratio: 16 / 9;
+  margin: 48px auto 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  background: #171915;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.video-player:hover .channel-play-icon {
+  background: #d92929;
+}
+
+.channel-play-icon {
+  display: grid;
+  width: 68px;
+  height: 48px;
+  place-items: center;
+  border-radius: 12px;
+  background: #f33;
+  font-size: 22px;
+  transition: background .2s ease;
+}
+
+.video-player strong {
+  font-size: 18px;
+}
+
+.video-player > span:last-child {
+  color: #c7c9c4;
+  font-size: 12px;
+}
+
 .feature-card {
   position: relative;
   display: flex;
@@ -397,6 +471,73 @@ img {
   color: #fff;
   background: #53584f;
   isolation: isolate;
+}
+
+.feature-video-trigger {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.feature-video-trigger:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.intro-video-dialog {
+  width: min(920px, calc(100% - 32px));
+  max-width: none;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: #fff;
+  background: #171915;
+}
+
+.intro-video-dialog::backdrop {
+  background: rgba(10, 12, 10, .82);
+}
+
+.intro-video-header {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 18px;
+}
+
+.intro-video-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.intro-video-close span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.intro-video-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.intro-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .feature-card > img,
@@ -462,7 +603,7 @@ img {
 }
 
 .feature-column > img {
-  object-position: 47% center;
+  object-position: center 47%;
 }
 
 .feature-worship > img {
@@ -474,7 +615,7 @@ img {
 }
 
 .feature-next > img {
-  object-position: center 55%;
+  object-position: center 45%;
 }
 
 .feature-sermon > img {
@@ -655,9 +796,377 @@ img {
   font-size: 10px;
 }
 
-.back-to-top {
+.official-home {
   color: #d3d6ce;
   font-size: 11px;
+}
+
+.mobile-actions {
+  display: none;
+}
+
+.mission-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 30px;
+  padding: 28px 31px;
+  border-left: 3px solid var(--green);
+  background: #fff;
+}
+
+.mission-note .eyebrow {
+  margin-bottom: 10px;
+}
+
+.mission-note h3 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 23px);
+  letter-spacing: -.055em;
+  line-height: 1.5;
+}
+
+.mission-note p:last-child {
+  margin: 9px 0 0;
+  color: #656a62;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.mission-note p:last-child span {
+  margin-left: 5px;
+  color: #8b9087;
+  white-space: nowrap;
+}
+
+.text-link-dark,
+.schedule-source,
+.official-directions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #b8beb1;
+  color: #373b35;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.text-link-dark span,
+.schedule-source span,
+.official-directions span {
+  color: var(--green-dark);
+  font-size: 15px;
+}
+
+.schedule-section {
+  background: #fff;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.schedule-card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 17px;
+  min-height: 190px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.schedule-card-wide {
+  grid-column: 1 / -1;
+}
+
+.schedule-number {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  color: #5f8414;
+  background: #edf5de;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.schedule-card h3 {
+  margin: 4px 0 9px;
+  font-size: 18px;
+  letter-spacing: -.05em;
+}
+
+.schedule-card p {
+  margin: 0;
+  color: #666b65;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.schedule-card > div > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 17px;
+  color: #4f6e15;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ministry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.ministry-links a {
+  display: inline-flex;
+  min-height: 33px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ministry-links a span {
+  color: var(--green-dark);
+}
+
+.schedule-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 20px;
+  padding: 20px 23px;
+  background: var(--paper);
+}
+
+.schedule-footer > p {
+  margin: 0;
+  color: #62675f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.schedule-footer > div {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 21px;
+}
+
+.first-visit-section {
+  background: var(--paper);
+}
+
+.visitor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.visitor-card {
+  display: flex;
+  min-height: 235px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  background: #fff;
+}
+
+.visitor-card > span {
+  color: #698d25;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.visitor-card h3 {
+  margin: 21px 0 10px;
+  font-size: 17px;
+  letter-spacing: -.055em;
+}
+
+.visitor-card p {
+  margin: 0;
+  color: #686d66;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.visitor-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: #4f6e15;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.visitor-reassurance {
+  margin: 18px 0 0;
+  color: #666b65;
+  font-size: 12px;
+  text-align: right;
+}
+
+.visitor-reassurance a {
+  color: #4f6e15;
+  font-weight: 700;
+}
+
+.updates-section {
+  background: #fff;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.update-card {
+  display: flex;
+  min-height: 235px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+  border: 1px solid var(--line);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.update-card:hover {
+  border-color: #a9c47a;
+  transform: translateY(-3px);
+}
+
+.update-tag {
+  color: #6c901f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.update-card strong {
+  margin-top: 19px;
+  font-size: 20px;
+  letter-spacing: -.05em;
+}
+
+.update-card > span:nth-of-type(2) {
+  margin-top: 10px;
+  color: #686d66;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.update-card b {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 17px;
+  color: #4f6e15;
+  font-size: 11px;
+}
+
+.update-card i {
+  font-size: 15px;
+  font-style: normal;
+}
+
+.sermon-archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: #4f6e15;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sermon-archive-link span {
+  font-size: 15px;
+}
+
+.cms-note {
+  margin: 19px 0 0;
+  padding: 15px 18px;
+  color: #676c64;
+  background: var(--paper);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.cms-note strong {
+  margin-right: 8px;
+  color: var(--ink);
+}
+
+.visit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.visit-actions .map-link {
+  margin-top: 0;
+}
+
+.travel-info {
+  display: grid;
+  gap: 11px;
+  margin-top: 27px;
+}
+
+.travel-info > div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.travel-info strong {
+  color: var(--ink);
+}
+
+.travel-info span {
+  color: #686d66;
+}
+
+.address-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 19px;
+  color: #dceac4;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.address-map span {
+  color: var(--green);
+  font-size: 15px;
 }
 
 :focus-visible {
@@ -709,6 +1218,15 @@ img {
   .visit-grid {
     gap: 6%;
   }
+
+  .schedule-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .schedule-footer > div {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 640px) {
@@ -725,8 +1243,20 @@ img {
     font-size: 9px;
   }
 
-  .topline-inner > span {
-    max-width: 58%;
+  .topline-address {
+    display: none;
+  }
+
+  .topline-links {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .topline .topline-youtube {
+    min-height: 25px;
+    padding-inline: 8px;
+    font-size: 9px;
   }
 
   .topline strong {
@@ -846,6 +1376,7 @@ img {
   .hero-location {
     right: 20px;
     bottom: 24px;
+    max-width: calc(100% - 40px);
     font-size: 9px;
   }
 
@@ -927,27 +1458,6 @@ img {
     font-size: 14px;
   }
 
-  .worship-inner {
-    min-height: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-block: 61px;
-    gap: 25px;
-  }
-
-  .worship-inner h2 {
-    font-size: 32px;
-  }
-
-  .worship-inner > div > p:last-child {
-    font-size: 12px;
-  }
-
-  .worship-section::after {
-    top: -140px;
-    right: -170px;
-  }
-
   .visit-grid {
     grid-template-columns: 1fr;
     gap: 33px;
@@ -958,7 +1468,7 @@ img {
   }
 
   .address-card {
-    min-height: 285px;
+    min-height: 0;
     padding: 31px 26px;
   }
 
@@ -977,6 +1487,127 @@ img {
     order: 3;
     width: 100%;
     font-size: 10px;
+  }
+
+  .official-home {
+    font-size: 10px;
+  }
+
+  .mission-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+    margin-top: 20px;
+    padding: 22px 18px;
+  }
+
+  .mission-note h3 {
+    font-size: 18px;
+  }
+
+  .mission-note p:last-child {
+    font-size: 11px;
+  }
+
+  .schedule-grid,
+  .visitor-grid,
+  .updates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-card {
+    min-height: 0;
+    padding: 20px 17px;
+  }
+
+  .schedule-card-wide {
+    grid-column: auto;
+  }
+
+  .schedule-card h3 {
+    font-size: 17px;
+  }
+
+  .schedule-card p,
+  .visitor-card p,
+  .update-card > span:nth-of-type(2) {
+    font-size: 11px;
+  }
+
+  .schedule-footer {
+    padding: 17px;
+  }
+
+  .schedule-footer > div {
+    gap: 14px;
+  }
+
+  .visitor-card,
+  .update-card {
+    min-height: 0;
+    padding: 21px;
+  }
+
+  .visitor-card h3 {
+    margin-top: 15px;
+  }
+
+  .visitor-card > a {
+    padding-top: 14px;
+  }
+
+  .visitor-reassurance {
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .cms-note {
+    font-size: 10px;
+  }
+
+  .travel-info > div {
+    grid-template-columns: 77px 1fr;
+  }
+
+  .mobile-actions {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 58px;
+    border-top: 1px solid #3a3c38;
+    background: #202220;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-actions a {
+    display: flex;
+    min-height: 58px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: #e6e9e1;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .mobile-actions a + a {
+    border-left: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  .mobile-actions a span {
+    color: #b2dc61;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  body {
+    padding-bottom: calc(58px + env(safe-area-inset-bottom));
   }
 }
 
@@ -1008,5 +1639,152 @@ img {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
+  }
+}
+
+.greeting-hero {
+  position: relative;
+  display: flex;
+  min-height: 330px;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(24, 28, 22, .88), rgba(24, 28, 22, .38)), url("../images/dasanch/hero-cross.jpg") center 48% / cover;
+}
+
+.greeting-hero-inner {
+  padding-block: 65px;
+}
+
+.greeting-hero .eyebrow {
+  color: #b6d878;
+  letter-spacing: .16em;
+}
+
+.greeting-hero h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(36px, 5vw, 58px);
+  letter-spacing: -.07em;
+}
+
+.greeting-hero-inner > p:not(.eyebrow) {
+  margin: 0;
+  color: #e0e2dc;
+  font-size: 15px;
+}
+
+.greeting-back {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 27px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.greeting-content {
+  background: var(--paper);
+}
+
+.greeting-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(35px, 7vw, 92px);
+}
+
+.greeting-photo {
+  min-height: 450px;
+  overflow: hidden;
+  background: #e6e8df;
+}
+
+.greeting-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  object-fit: cover;
+}
+
+.greeting-message {
+  padding-block: 20px;
+}
+
+.greeting-message h2 {
+  margin: 13px 0 24px;
+  font-size: clamp(27px, 3.5vw, 40px);
+  letter-spacing: -.065em;
+  line-height: 1.45;
+}
+
+.greeting-message h2 span {
+  color: var(--green-dark);
+}
+
+.greeting-message > p:not(.eyebrow):not(.greeting-scripture) {
+  color: #5f645d;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.greeting-scripture {
+  margin: 26px 0 0;
+  padding: 19px 21px;
+  border-left: 3px solid var(--green);
+  background: #fff;
+  color: #3f443b;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.greeting-scripture span {
+  display: block;
+  margin-top: 5px;
+  color: #79816e;
+  font-size: 11px;
+}
+
+.greeting-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.greeting-phone {
+  color: #4c6b16;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .greeting-hero {
+    min-height: 270px;
+  }
+
+  .greeting-hero-inner {
+    padding-block: 48px;
+  }
+
+  .greeting-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .greeting-photo,
+  .greeting-photo img {
+    min-height: 0;
+    max-height: 340px;
+  }
+
+  .greeting-photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .greeting-message {
+    padding: 0;
   }
 }
